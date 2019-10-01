@@ -4,40 +4,29 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.champirata.champflix.constant.Genre;
+import com.champirata.champflix.constant.Grade;
+import com.champirata.champflix.constant.Language;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Dummy class that's supposed to fetch data from web services.
  */
 public class SeriesReviewExtractor {
 
+	@Getter 
+	@Setter 
+	@NoArgsConstructor
+	@AllArgsConstructor
 	public static class SeriesReview {		
 		
 		private String title;	
 		private double rating;
 		private String source;
 		private Genre genre;
-		
-		public SeriesReview(String title, double rating,String source, Genre genre) {
-			this.title = title;
-			this.rating = rating;
-			this.source = source;
-			this.genre = genre;
-		}
-		
-		
-		public String getTitle() {
-			return title;
-		}
-		
-		public double getRating() {
-			return rating;
-		}
-		
-		
-		public String getSource() {
-			return source;
-		}
-
 		
 
 		@Override
@@ -75,7 +64,7 @@ public class SeriesReviewExtractor {
 		
 	}
 	
-	public static List<SeriesReview> getRatingsFromIMDv(Genre genre){
+	public static List<SeriesReview> getRatingsFromIMDv(){
 		SeriesReview s1 = new SeriesReview("Kadenang Ginto", 8.5,"IMDv",Genre.DRAMA);
 		SeriesReview s2 = new SeriesReview("Los Bastardos", 7.2,"IMDv",Genre.DRAMA);
 		SeriesReview s3 = new SeriesReview("Killer Bride", 9.9,"IMDv",Genre.DRAMA);
@@ -92,7 +81,7 @@ public class SeriesReviewExtractor {
 		
 	}
 	
-	public static List<SeriesReview> getRatingsFromRottenPotatoes(Genre genre){
+	public static List<SeriesReview> getRatingsFromRottenPotatoes(){
 		SeriesReview s1 = new SeriesReview("Kadenang Ginto", 6.5,"Rotten Potatoes",Genre.DRAMA);
 		SeriesReview s2 = new SeriesReview("Los Bastardos", 4.2,"Rotten Potatoes",Genre.DRAMA);
 		SeriesReview s3 = new SeriesReview("Killer Bride", 8.7,"Rotten Potatoes",Genre.DRAMA);
